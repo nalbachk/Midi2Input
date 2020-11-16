@@ -12,5 +12,7 @@ ATM suported:
 * DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin (
 
 
-Kevwords:
+Keywords:
 dolphin, midi, controller, SendInput, edrums, rock, band, wii, keystrokes, keybd_event, SendKeys, PostMessage, user32, taiko
+
+![Screenshot](Midi2Input.png)
