@@ -115,7 +115,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Releases\Release_2020_11_16.rar" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
