@@ -1,6 +1,9 @@
 # Midi2Input
 Midi-In => Simulated Input (SendInput, SendKey, ...)
 
+How To Use
+* see releases => unzip Release_xxxx_xx_xx.rar => run Midi2Input.exe => "press start"
+
 
 Default MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","K" (Taiko no Tatsujin)
 
