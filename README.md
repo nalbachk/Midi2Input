@@ -7,3 +7,7 @@ Default MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","
 
 ATM suported:
 * DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin (
+
+
+Kevwords:
+dolphin, midi, controller, SendInput, edrums, rock, band, wii, keystrokes, keybd_event, SendKeys, PostMessage, user32, taiko
