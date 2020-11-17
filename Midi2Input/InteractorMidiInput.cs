@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System;
 using System.Diagnostics;
 using MappingConfigNamespace;
+using Midi2Input;
 
 namespace InteractorMidi
 {
     public abstract class InteractorMidiInput
     {
+        public ViewLogger viewLogger = null;
         public MappingConfig mappingConfig = new MappingConfig();
         private static InputDevice inputDevice = null;
 

@@ -14,22 +14,32 @@ namespace MappingConfigNamespace
             
             mappingEntry = new MappingEntry();
             mappingEntry.noteNumber = 45;
-            mappingEntry.keyScanCode = 0x25; // K
+            mappingEntry.keyScanCode = 0x0025; // K
             mappingEntries.Add(mappingEntry);
 
             mappingEntry = new MappingEntry();
             mappingEntry.noteNumber = 43;
-            mappingEntry.keyScanCode = 0x24; // J
+            mappingEntry.keyScanCode = 0x0024; // J
             mappingEntries.Add(mappingEntry);
 
             mappingEntry = new MappingEntry();
             mappingEntry.noteNumber = 38;
-            mappingEntry.keyScanCode = 0x21; // F
+            mappingEntry.keyScanCode = 0x0021; // F
             mappingEntries.Add(mappingEntry);
 
             mappingEntry = new MappingEntry();
             mappingEntry.noteNumber = 48;
-            mappingEntry.keyScanCode = 0x20; // D
+            mappingEntry.keyScanCode = 0x0020; // D
+            mappingEntries.Add(mappingEntry);
+
+            mappingEntry = new MappingEntry();
+            mappingEntry.noteNumber = 49;
+            mappingEntry.keyScanCode = 0xE04B; // left
+            mappingEntries.Add(mappingEntry);
+
+            mappingEntry = new MappingEntry();
+            mappingEntry.noteNumber = 51;
+            mappingEntry.keyScanCode = 0xE04D; // right
             mappingEntries.Add(mappingEntry);
         }
     }

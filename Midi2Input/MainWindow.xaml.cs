@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,12 +18,14 @@ using System.IO;
 
 namespace Midi2Input
 {
+
     public class MyInteractorMidiInput : InteractorMidiInput
     {
         private InteractorUser32 interactorUser32 = new InteractorUser32();
 
         public override void MidiEventReceived(String eventType, int channel, int noteNumber, int velocity)
         {
+            viewLogger.log("eventType:" + eventType + ", channel:" + channel + ", noteNumber:" + noteNumber + ", velocity:"+ velocity);
             Parallel.ForEach(mappingConfig.mappingEntries, (mappingEntry) =>
             {
                 if (mappingEntry.channel > -1 && channel != mappingEntry.channel)
@@ -46,8 +47,8 @@ namespace Midi2Input
                 {
                     return;
                 }
-
-                if("sendKeyDownAndUpAsInput".Equals(mappingEntry.action))
+                
+                if ("sendKeyDownAndUpAsInput".Equals(mappingEntry.action))
                 {
                     interactorUser32.sendKeyDownAndUpAsInput(mappingEntry.keyScanCode, mappingEntry.duration);
                 }
@@ -59,9 +60,20 @@ namespace Midi2Input
                 {
                     interactorUser32.sendKeyUpAsInput(mappingEntry.keyScanCode);
                 }
+                else if("sendKeyDownAndUpAsKeybdEvent".Equals(mappingEntry.action))
+                {
+                    interactorUser32.sendKeyDownAndUpAsKeybdEvent(mappingEntry.keyScanCode, mappingEntry.duration);
+                }
+                else if ("sendKeyDownAsKeybdEvent".Equals(mappingEntry.action))
+                {
+                    interactorUser32.sendKeyDownAsKeybdEvent(mappingEntry.keyScanCode);
+                }
+                else if ("sendKeyUpAsKeybdEvent".Equals(mappingEntry.action))
+                {
+                    interactorUser32.sendKeyUpAsKeybdEvent(mappingEntry.keyScanCode);
+                }
             });
         }
-
     }
 
     /// <summary>
@@ -69,17 +81,16 @@ namespace Midi2Input
     /// </summary>
     public partial class MainWindow : Window
     {
-        private InteractorMidiInput interactorMidiInput = new MyInteractorMidiInput();
+        private ViewLogger viewLogger = null;
+        private InteractorMidiInput interactorMidiInput = null;
 
         public MainWindow()
         {
             InitializeComponent();
+            this.viewLogger = new ViewLogger(TxtLog);
+            interactorMidiInput = new MyInteractorMidiInput();
+            interactorMidiInput.viewLogger = viewLogger;
             BtnLoad_Click(null, null);
-        }
-
-        public void log(String line)
-        {
-            TxtLog.AppendText(line + Environment.NewLine);
         }
 
         private void BtnLoad_Click(object sender, RoutedEventArgs e)
@@ -87,7 +98,7 @@ namespace Midi2Input
             List<String> inputDeviceKeys = interactorMidiInput.retrieveInputDeviceKeys();
             if (inputDeviceKeys.Count < 1)
             {
-                log("no InputDevices");
+                viewLogger.log("no InputDevices");
                 return;
             }
 
@@ -96,7 +107,7 @@ namespace Midi2Input
             
             if (File.Exists(fileName))
             {
-                log("read MappingConfig: " + fileName);
+                viewLogger.log("read MappingConfig: " + fileName);
                 jsonMappingConfig = File.ReadAllText(fileName);
             }
             else
@@ -115,7 +126,7 @@ namespace Midi2Input
             List<String> inputDeviceKeys = interactorMidiInput.retrieveInputDeviceKeys();
             if (inputDeviceKeys.Count < 1)
             {
-                log("no InputDevices");
+                viewLogger.log("no InputDevices");
                 return;
             }
 
@@ -125,7 +136,7 @@ namespace Midi2Input
                 String jsonMappingConfig = TxtConfig.Text;
                 if (jsonMappingConfig.Length < 1)
                 {
-                    log("no MappingConfig => please load first");
+                    viewLogger.log("no MappingConfig => please load first");
                     return;
                 }
                 Type type = Type.GetType("MappingConfigNamespace.MappingConfig");
@@ -141,7 +152,7 @@ namespace Midi2Input
                 config.inputDeviceKey = inputDeviceKeys.First();
             }
 
-            log("write MappingConfig: " + fileName);
+            viewLogger.log("write MappingConfig: " + fileName);
             {
                 String jsonMappingConfig = JsonConvert.SerializeObject(config, Formatting.Indented);
                 TxtConfig.Clear();
@@ -149,7 +160,7 @@ namespace Midi2Input
                 File.WriteAllText(fileName, jsonMappingConfig);
             }
 
-            log("inputDeviceKey: " + config.inputDeviceKey);
+            viewLogger.log("inputDeviceKey: " + config.inputDeviceKey);
             interactorMidiInput.start(config);
         }
     }

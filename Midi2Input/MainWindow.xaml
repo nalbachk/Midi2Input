@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <Button Grid.Row="0" x:Name="BtnLoad" Content="Load" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="BtnLoad_Click"/>
         <Button Grid.Row="0" x:Name="BtnStart" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Click="BtnStart_Click"/>
-        <TextBox Grid.Row="1" x:Name="TxtConfig"/>
-        <TextBox Grid.Row="2" x:Name="TxtLog" MaxLines="5"/>
+        <TextBox Grid.Row="1" x:Name="TxtConfig" IsReadOnly="False" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        <TextBox Grid.Row="2" x:Name="TxtLog" MaxLines="8" IsReadOnly="True"/>
 	</Grid>
 </Window>
