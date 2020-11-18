@@ -4,6 +4,9 @@ Midi-In => Simulated Input (SendInput, SendKey, ...)
 </pre>
 How To Use
 * see releases => unzip Release_xxxx_xx_xx.rar => run Midi2Input.exe => "press start"
+* use logMidiEvents:true to see logs like
+  * eventType:NoteOff, channel:9, noteNumber:48, velocity:23
+  * eventType:NoteOn, channel:9, noteNumber:48, velocity:23
 <pre>
 </pre>
 Example MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","K" (Taiko no Tatsujin)
@@ -11,7 +14,8 @@ Example MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","
 <pre>
 </pre>
 ATM suported:
-* DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin (
+* DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin
+* MidiInputEvents via winmm.dll (see InteractorMidi-History for Version with Melanchall-Lib)
 <pre>
 </pre>
 Todo's:
