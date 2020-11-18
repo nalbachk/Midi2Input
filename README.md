@@ -5,8 +5,8 @@ Midi-In => Simulated Input (SendInput, SendKey, ...)
 How To Use
 * see releases => unzip Release_xxxx_xx_xx.rar => run Midi2Input.exe => "press start"
 * use logMidiEvents:true to see logs like
-** eventType:NoteOff, channel:9, noteNumber:48, velocity:23
-** eventType:NoteOn, channel:9, noteNumber:48, velocity:23
+  * eventType:NoteOff, channel:9, noteNumber:48, velocity:23
+  * eventType:NoteOn, channel:9, noteNumber:48, velocity:23
 <pre>
 </pre>
 Example MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","K" (Taiko no Tatsujin)
