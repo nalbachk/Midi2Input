@@ -4,6 +4,10 @@ Midi-In => Simulated Input (SendInput, SendKey, ...)
 </pre>
 How To Use
 * see releases => unzip Release_xxxx_xx_xx.rar => run Midi2Input.exe => "press start"
+<pre>
+</pre>
+Example MappingConfig is for Roland TD-11 (Snare+Toms+Cymbals) => Keyboard "D","F","J","K","Left","Right" (Taiko no Tatsujin)
+* create your own
 * use logMidiEvents:true to see logs like
   * eventType:NoteOff, channel:9, noteNumber:48, velocity:23
   * eventType:NoteOn, channel:9, noteNumber:48, velocity:23
@@ -11,10 +15,6 @@ How To Use
   * http://www.winfaq.de/faq_html/Content/tip1500/onlinefaq.php?h=tip1576.htm
     * https://calculator.name/baseconvert/hexadecimal/decimal/E04B
   * https://www.millisecond.com/support/docs/v6/html/language/scancodes.htm
-<pre>
-</pre>
-Example MappingConfig is for Roland TD-11 (Snare+Toms+Cymbals) => Keyboard "D","F","J","K","Left","Right" (Taiko no Tatsujin)
-* create your own
 <pre>
 </pre>
 ATM suported:
