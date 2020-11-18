@@ -7,6 +7,10 @@ How To Use
 * use logMidiEvents:true to see logs like
   * eventType:NoteOff, channel:9, noteNumber:48, velocity:23
   * eventType:NoteOn, channel:9, noteNumber:48, velocity:23
+* links for KeyScanCodes
+ * http://www.winfaq.de/faq_html/Content/tip1500/onlinefaq.php?h=tip1576.htm
+   * https://calculator.name/baseconvert/hexadecimal/decimal/E04B
+ * https://www.millisecond.com/support/docs/v6/html/language/scancodes.htm
 <pre>
 </pre>
 Example MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","K" (Taiko no Tatsujin)
@@ -15,7 +19,8 @@ Example MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","
 </pre>
 ATM suported:
 * DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin
-* MidiInputEvents via winmm.dll (see InteractorMidi-History for Version with Melanchall-Lib)
+* MidiInputEvents via winmm.dll => allows to receive Midi (see InteractorMidi-History for Version with Melanchall-Lib)
+* keybd_event via user32.dll => allows to simulate keyboard events (atm not working)
 <pre>
 </pre>
 Todo's:
