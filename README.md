@@ -13,7 +13,7 @@ How To Use
  * https://www.millisecond.com/support/docs/v6/html/language/scancodes.htm
 <pre>
 </pre>
-Example MappingConfig is for Roland TD-11 (Snare+Toms) => Keyboard "D","F","J","K" (Taiko no Tatsujin)
+Example MappingConfig is for Roland TD-11 (Snare+Toms+Cymbals) => Keyboard "D","F","J","K","Left","Right" (Taiko no Tatsujin)
 * create your own
 <pre>
 </pre>
