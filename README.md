@@ -17,7 +17,7 @@ Example MappingConfig is for Roland TD-11 (Snare+Toms+Cymbals) => Keyboard "D","
   * https://www.millisecond.com/support/docs/v6/html/language/scancodes.htm
 <pre>
 </pre>
-ATM suported:
+ATM supported:
 * MidiInputEvents via winmm.dll => allows to receive Midi (see InteractorMidi-History for Version with Melanchall-Lib)
 * DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin
   * sendKeyDownAndUpAsInput, sendKeyDownAsInput, sendKeyUpAsInput
@@ -26,7 +26,7 @@ ATM suported:
 <pre>
 </pre>
 Todo's:
-* Support for sendKeys (not DirectX)
+* fix keybd_event
 <pre>
 </pre>
 Keywords:
