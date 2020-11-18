@@ -19,8 +19,10 @@ Example MappingConfig is for Roland TD-11 (Snare+Toms+Cymbals) => Keyboard "D","
 </pre>
 ATM suported:
 * DirectX.SendInput via user32.dll => allows to simulate keyboard events to games or other applications like dolphin
+  * sendKeyDownAndUpAsInput, sendKeyDownAsInput, sendKeyUpAsInput
 * MidiInputEvents via winmm.dll => allows to receive Midi (see InteractorMidi-History for Version with Melanchall-Lib)
 * keybd_event via user32.dll => allows to simulate keyboard events (atm not working)
+  * sendKeyDownAndUpAsKeybdEvent, sendKeyDownAsKeybdEvent, sendKeyUpAsKeybdEvent
 <pre>
 </pre>
 Todo's:
