@@ -10,6 +10,7 @@ using static InteractorMidi.NativeMethods;
 
 namespace InteractorMidi
 {
+    // PerformanceProblem with Melanchall => Melanchall-Version see history
     internal static class NativeMethods
     {
         internal const int MMSYSERR_NOERROR = 0;
