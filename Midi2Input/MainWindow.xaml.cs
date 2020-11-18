@@ -25,7 +25,11 @@ namespace Midi2Input
 
         public override void MidiEventReceived(String eventType, int channel, int noteNumber, int velocity)
         {
-            viewLogger.log("eventType:" + eventType + ", channel:" + channel + ", noteNumber:" + noteNumber + ", velocity:"+ velocity);
+            if(mappingConfig.logMidiEvents)
+            {
+                viewLogger.log("eventType:" + eventType + ", channel:" + channel + ", noteNumber:" + noteNumber + ", velocity:" + velocity);
+            }
+
             Parallel.ForEach(mappingConfig.mappingEntries, (mappingEntry) =>
             {
                 if (mappingEntry.channel > -1 && channel != mappingEntry.channel)

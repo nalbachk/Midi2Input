@@ -7,6 +7,7 @@ namespace MappingConfigNamespace
     {
         public String inputDeviceKey;
         public List<MappingEntry> mappingEntries = new List<MappingEntry>();
+        public bool logMidiEvents = false;
 
         public void initExample1()
         {
@@ -52,6 +53,6 @@ namespace MappingConfigNamespace
         public int velocity = -1;
         public String action = "sendKeyDownAndUpAsInput";
         public ushort keyScanCode = 0x00;
-        public int duration = 50;
+        public int duration = 8;
     }
 }

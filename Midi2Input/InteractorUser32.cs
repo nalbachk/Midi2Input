@@ -5,6 +5,7 @@ using System.Threading;
 
 namespace Midi2Input
 {
+    // PerformanceProblem with Melanchall => Melanchall-Version see history
     class InteractorUser32
     {
         [DllImport("user32.dll", SetLastError = true)]
