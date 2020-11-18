@@ -26,7 +26,8 @@ ATM supported:
 <pre>
 </pre>
 Todo's:
-* fix keybd_event
+* why is keybd_event not working?
+* performance problem when logMidiEvents:true?
 <pre>
 </pre>
 Keywords:
