@@ -3,7 +3,7 @@ Midi-In => Simulated Input (SendInput, SendKey, ...)
 <pre>
 </pre>
 How To Use
-* see releases => unzip Release_xxxx_xx_xx.rar => run Midi2Input.exe => "press start"
+* see https://github.com/nalbachk/Midi2Input/releases => unzip Release_xxxx_xx_xx.rar => run Midi2Input.exe => "press start"
 * taiko controller settings => https://forums.dolphin-emu.org/Thread-tutorial-keyboard-configuration-for-taiko-no-tatsujin-wii-games
 <pre>
 </pre>
